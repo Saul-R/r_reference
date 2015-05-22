@@ -1,0 +1,64 @@
+---
+title: "ggplot2 Reference"
+output: html_document
+---
+
+##Concept
+
+Ggplot is based on the idea of layers    
+ $> Layer_1 + Layer_2 + ... + Layer_n$ 
+
+##Layer types.
+1. Plot background
+  + `ggplot(data, aes(dataPred,dataResp))`
+
+2. Plot type (*geom*)
+  + Blank `geom_blank`
+  + Univariable continuous
+    + Area `geom_area(stat="bin")`
+    + Density `geom_density()`
+    + Dotplot `geom_dotplot()`
+    + Frequence Polynome `geom_freqpoly`
+    + Histogram `geom_histogram(binwidth = 4)`
+  + Univariate discrete
+    + Bar plot `geom_bar`
+  + Bivariate bicontinuous
+    + Scatterplot `geom_jitter()`
+    + Points `geom_point()` (?)
+    + Quantile lines `geom_quantile()` (?)
+    + Rug Chart `geom_rug()` (?)
+    + Model fit `geom_smooth(model=lm)`
+    + Text/Labels `geom_text(aes(label=predLabels))`
+  + Bivariate distribution (heatmaps)
+    + Rectangles Heatmap `geom_bin2d(binwidth=c(5,0.5)`
+    + Density Plot `geom_desnity2d()`
+    + Hex Heatmap `geom_hex()`
+  + Bivariate with Y as class (discrete)
+    + Bar Plot `geom_bar(stat="identity")`
+    + Boxplots `geom_boxplot()`
+    + Dotplots `geom_dotplot(binaxis=y,stackdir="center")`
+    + Violin plot `geom_violin(scale="area")`
+  + Function
+    + Area `geom_area()`
+    + Line `geom_line()`
+    + Step `geom_step()`
+  + Errors & Conf. Intervals
+    + Crossbars `geom_crossbar()`
+    + Error Bars `geom_errorbar()`
+    + Line Range `geom_linerange()`
+    + Point Range `geom_pointrange()`
+  + Maps
+    + Map `geom_map(aes(map_id=validMapData),map=map_data(validStateMap)+ expand_limits(x=mapConv$long,y=mapConv$lat)`
+  
+  + Geometric
+    + Poygon `geom_polygon(aes(group=group))`
+    + Path `geom_path(lineend=butt, linejoin="round",linemitre=1`
+    + Segment `geom_segment(aes(xend = long +` $\Delta_{long}$`,yend = lat + `$\Delta_{lat}$`))`
+    + Rectangle `geom_rect(aes(xmin = long, ymin=lat, xmax= long +` $\Delta_{long}$`,ymax = lat + `$\Delta_{lat}$`))`
+    + 
+
+
++ Variables 
+    + `col=dataPred`
+    + `size=dataPred`
+    + x, y, alpha, linetype, size, weight, fill...
